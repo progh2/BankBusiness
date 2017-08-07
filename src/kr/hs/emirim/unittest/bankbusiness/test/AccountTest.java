@@ -22,6 +22,16 @@ public class AccountTest {
 		if(account.getBalance() != 10000) {
 			fail("계좌 조회 실패!");
 		}
+		
+		account = new Account(20000);
+		if(account.getBalance() != 20000) {
+			fail("계좌 조회 실패!");
+		}
+		
+		account = new Account(0);
+		if(account.getBalance() != 0) {
+			fail("계좌 조회 실패!");
+		}
 	}
 
 }
