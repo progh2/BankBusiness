@@ -1,10 +1,9 @@
 package kr.hs.emirim.unittest.bankbusiness.test;
 
-import static org.junit.Assert.fail;
-
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import org.junit.Before;
 import org.junit.Test;
-
 import kr.hs.emirim.unittest.bankbusiness.main.Account;
 
 public class AccountTest {
@@ -18,26 +17,17 @@ public class AccountTest {
 	
 	@Test
 	public void testCreateAccount() throws Exception {
-		if( account == null ) {
-			fail("계좌 생성 실패!");
-		}
+		assertNotEquals("계좌 생성 실패!", null, account );
 	}
 	
 	@Test
 	public void testGetBalance() throws Exception {
-		if(account.getBalance() != 10000) {
-			fail("계좌 조회 실패!");
-		}
+		assertEquals("계좌 조회 실패!", 10000, account.getBalance());
 		
 		account = new Account(20000);
-		if(account.getBalance() != 20000) {
-			fail("계좌 조회 실패!");
-		}
+		assertEquals("계좌 조회 실패!", 20000, account.getBalance());
 		
 		account = new Account(0);
-		if(account.getBalance() != 0) {
-			fail("계좌 조회 실패!");
-		}
+		assertEquals("계좌 조회 실패!", 0, account.getBalance());
 	}
-
 }
