@@ -2,8 +2,11 @@ package kr.hs.emirim.unittest.bankbusiness.main;
 
 public class Account {
 
+	public Account(int money) {
+		
+	}
+
 	public int getBalance() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 10000;
 	}	
 }
